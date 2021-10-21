@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Week7.Views.LoginPage">
+    <StackLayout x:Name="masterLayout">
+        <StackLayout x:Name="logoStack" VerticalOptions="FillAndExpand">
+            <Label x:Name="lblNoInternet" HorizontalTextAlignment="Center" TextColor="White" BackgroundColor="Red"/>
+            <Image x:Name="loginIcon" Source="login.png" Margin="0,80,0,0"/>
+        </StackLayout>
+
+        <StackLayout x:Name="loginEntriesStack" VerticalOptions="StartAndExpand">
+            <StackLayout.Padding>
+                <OnIdiom x:TypeArguments="Thickness">
+                    <OnIdiom.Phone>80,0,80,0</OnIdiom.Phone>
+                    <OnIdiom.Tablet>140,150,140,0</OnIdiom.Tablet>
+                </OnIdiom>
+            </StackLayout.Padding>
+
+            <ActivityIndicator x:Name="activitySpinner" Color="Red" IsRunning="True"/>
+
+            <Label x:Name="lblUsername" Text="Username"/>
+            <Entry x:Name="entryUsername" Placeholder="Username"/>
+            <Label x:Name="lblPassword" Text="Password"/>
+            <Entry x:Name="entryPassword" Placeholder="Password" IsPassword="True"/>
+            <Button x:Name="bttnSignIn" Text="Sign In" Clicked="signIn"/>
+
+        </StackLayout>
+    </StackLayout>
+</ContentPage>
