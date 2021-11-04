@@ -12,7 +12,7 @@ namespace Week7.Data
         static object locker = new object();
         SQLiteConnection database;
 
-        public TokenDatabaseController()
+        public UserDatabaseController()
         {
             database = DependencyService.Get<ISQLite>().GetConnection();
             database.CreateTable<User>();
